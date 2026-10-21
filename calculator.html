@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       body{
+    background:white;
+    font-family: Arial;
+}
+.calculator-box{
+    text-align:center;
+    margin: 60px auto;
+    padding: 30px;
+    width: 400px;
+    border: 2px solid lightgray;
+    border-radius: 15px;
+    background: whitesmoke;
+}
+h1{
+    color: black;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+input{
+    padding: 10px;
+    width: 250px;
+    margin: 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 14px;
+}
+button{
+    width: 75px;
+    height: 38px;
+    margin: 8px 6px;
+    border: 2px solid darkblue;
+    border-radius: 8px;
+    background: lightslategray;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+button:hover{
+    background: blue;
+}
+#result{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: black;
+}
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <br><br>
+    <input type="number" id="num2" placeholder="Enter second number">
+    <br><br>
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">÷</button>
+    <h1 id="result">Result:</h1>
+<script>
+    function add(){
+        let number1 = Number(document.querySelector("#num1").value);
+        let number2 = Number(document.querySelector("#num2").value);
+        let sum = number1 + number2;
+        document.querySelector("#result").innerHTML = "Result: " + sum;
+    }
+    function sub(){
+        let number1 = Number(document.querySelector("#num1").value);
+        let number2 = Number(document.querySelector("#num2").value);
+        let sub = number1 - number2;
+        document.querySelector("#result").innerHTML = "Result: " + sub;
+    }
+    function mul(){
+        let number1 = Number(document.querySelector("#num1").value);
+        let number2 = Number(document.querySelector("#num2").value);
+        let mul = number1 * number2;
+        document.querySelector("#result").innerHTML = "Result: " + mul;
+    }
+    function div(){
+        let number1 = Number(document.querySelector("#num1").value);
+        let number2 = Number(document.querySelector("#num2").value);
+        if (number2 == 0){
+            document.querySelector("#result").innerHTML = "Cannot divide by 0";
+        } else {
+            let div = number1 / number2;
+            document.querySelector("#result").innerHTML = "Result: " + div;
+        }
+    }
+</script>
+</body>
+</html>
